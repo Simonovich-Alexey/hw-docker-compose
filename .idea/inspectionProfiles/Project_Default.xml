@@ -1,0 +1,32 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <value>
+          <list size="3">
+            <item index="0" class="java.lang.String" itemvalue="greenlet" />
+            <item index="1" class="java.lang.String" itemvalue="typing_extensions" />
+            <item index="2" class="java.lang.String" itemvalue="psycopg2-binary" />
+          </list>
+        </value>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="main.models.Car.objects" />
+          <option value="main.models.Car.DoesNotExist" />
+          <option value="school.models.Student.objects" />
+          <option value="articles.models.Article.objects" />
+          <option value="measurement.models.Sensor.objects" />
+          <option value="measurement.models.Measurement.objects" />
+          <option value="logistic.models.Product.objects" />
+          <option value="logistic.models.Stock.objects" />
+          <option value="logistic.models.StockProduct.objects" />
+          <option value="logistic.models.StockProduct.update_or_create" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>

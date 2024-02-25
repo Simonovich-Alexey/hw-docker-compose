@@ -1,0 +1,37 @@
+version: "3.9"
+
+services:
+  db:
+    image: postgres:15-alpine3.16
+    restart: always
+    environment:
+      POSTGRES_USER: "user1"
+      POSTGRES_PASSWORD: 1
+      POSTGRES_DB: "products"
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgres/data
+
+  stocks_products:
+    build: ./stocks_products/
+    command: gunicorn stocks_products.wsgi:application --bind 0.0.0.0:8000
+    env_file:
+      - ./stocks_products/.env
+    volumes:
+      - ./app/static/:/app/static/
+    expose:
+      - 8000
+    depends_on:
+      - db
+
+  nginx:
+    build: ./nginx
+    volumes:
+      - ./app/static/:/app/static/
+    ports:
+      - "8000:80"
+    depends_on:
+      - stocks_products
+volumes:
+  pgdata:
